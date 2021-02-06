@@ -1,11 +1,11 @@
-package com.example.panicbuttonui
+package com.example.panicbuttonui.helper
 
 import android.app.Activity
 import android.content.Context
 import android.os.Build
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.ColorRes
@@ -66,4 +66,10 @@ fun Context?.getMyColor(@ColorRes id: Int): Int {
 
 fun ImageView.loadImage(url: String?) {
     Glide.with(this).load(url).into(this)
+}
+
+/*use this method to hide soft key board*/
+fun hideSoftKeyboard(activity: Activity?) {
+    val imm: InputMethodManager? = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+    imm?.hideSoftInputFromWindow(activity?.currentFocus?.windowToken, 0)
 }
