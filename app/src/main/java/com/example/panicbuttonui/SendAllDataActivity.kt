@@ -63,11 +63,14 @@ class SendAllDataActivity : AppCompatActivity() {
         vm?.startRecording()
         imgStarRecord.visibility=View.GONE
         imgStopRecord.visibility=View.VISIBLE
+        txtRekam.text="Stop"
+
     }
     private fun stopRecording(){
         vm?.stopRecording()
         imgStarRecord.visibility=View.VISIBLE
         imgStopRecord.visibility=View.GONE
+        txtRekam.text="Rekam"
     }
 
     private fun initInjector(){
