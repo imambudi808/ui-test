@@ -14,7 +14,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         setStatusBackgroundColor(getMyColor(R.color.white))
         setLightStatusBar(true)
-//        imgIllustration.loadImage(image)
+        imgIllustration.loadImage(image)
         btnLogin.setOnClickListener {
             login()
         }
